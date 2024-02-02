@@ -677,17 +677,17 @@ if __name__ == '__main__':
     current_date = time.strftime("%Y-%m-%d")
     current_time = time.strftime("%Y-%m-%d %H:%M:%S")
     touch(Template(r"tpl1704189135917.png", record_pos=(-0.211, 1.079), resolution=(1260, 2800)))
-#     #仓储管理
-#     ## 入库
-#     Warehousing()
-#     ## 调度
-#     dispatch()
-#     ## 出库------------------这里有返回bug，后续还需优化
-#     outbound()
-#     ## 领用-固定资产----------这里缺少对领用成功弹窗的验证
-#     use()
-#     ## 归还
-#     return_material()
+    #仓储管理
+    ## 入库
+    Warehousing()
+    ## 调度
+    dispatch()
+    ## 出库------------------这里有返回bug，后续还需优化
+    outbound()
+    ## 领用-固定资产----------这里缺少对领用成功弹窗的验证
+    use()
+    ## 归还
+    return_material()
 
 
     #  测试前置：需要先切换输入法
@@ -702,51 +702,51 @@ if __name__ == '__main__':
         to_do_list()
     ## 待办消息推送及详情
     chat_need_to_be_deal()
-#     ## OA流程监控
-#     oa_monitor()
-#     # 已办列表----已办列表还不支持括号中的内容搜索所以报错
-#     ## 通过时间搜索当日已审批过的单据
+    ## OA流程监控
+    oa_monitor()
+    # 已办列表----已办列表还不支持括号中的内容搜索所以报错
+    ## 通过时间搜索当日已审批过的单据
 
-#     try:
-#         completed_list()
-#     except:
-#         print("运行出错")
-#     finally:
-#         back_to_home()
+    try:
+        completed_list()
+    except:
+        print("运行出错")
+    finally:
+        back_to_home()
     
-#     # 我的流程
-#     ## 通过时间搜索当日已审完成的单据
-#     my_process()
+    # 我的流程
+    ## 通过时间搜索当日已审完成的单据
+    my_process()
 
 
-#     # 微博
-#     ## 创建工作微博
-#     try:
-#         job_weibo()
-#     except:
-#         print("运行出错")
-#     finally:
-#         back_to_home()
-#     ## 员工微博
-#     try:
-#         employee_weibo()
-#     except:
-#         print("运行出错")
-#     finally:
-#         back_to_home()
+    # 微博
+    ## 创建工作微博
+    try:
+        job_weibo()
+    except:
+        print("运行出错")
+    finally:
+        back_to_home()
+    ## 员工微博
+    try:
+        employee_weibo()
+    except:
+        print("运行出错")
+    finally:
+        back_to_home()
 
-#     #消息通知-------切换账号后没有数据暂时别用
-#     try:
-#         message_notice()
-#     except:
-#         print("运行出错")
-#     finally:
-#         back_to_home()
+    #消息通知-------切换账号后没有数据暂时别用
+    try:
+        message_notice()
+    except:
+        print("运行出错")
+    finally:
+        back_to_home()
 
 
-#     # 质量管理
-#     ## 质量计划这里执行后有误，以后新建后，需要删除
-#     check_nature()
+    # 质量管理
+    ## 质量计划这里执行后有误，以后新建后，需要删除
+    check_nature()
 
 
 
