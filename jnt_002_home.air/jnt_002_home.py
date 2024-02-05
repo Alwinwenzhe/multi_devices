@@ -84,21 +84,20 @@ def vedio_manager():
     touch(Template(r"tpl1705049220642.png", record_pos=(-0.434, -0.763), resolution=(1080, 1920)))
 
 
+            
+if __name__ == '__main__':
+    # 用例开始：
+    # 01--考勤打卡---模拟器中不能打卡
+    # choose_clock_pro()
+    # clock_in()
 
+    # 02--测试项目中，进行信息查看，回到首页
+    choose_test_pro()
+    check_project_info()
 
-
-# 用例开始：
-# 01--考勤打卡---模拟器中不能打卡
-# choose_clock_pro()
-# clock_in()
-    
-# 02--测试项目中，进行信息查看，回到首页
-choose_test_pro()
-check_project_info()
-
-# 03--进入装备后，返回
-enter_equip()
-vedio_manager()
+    # 03--进入装备后，返回
+    enter_equip()
+    vedio_manager()
 
 
 

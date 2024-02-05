@@ -57,7 +57,7 @@ def search_pro():
     touch(Template(r"tpl1703216668954.png", record_pos=(-0.348, 0.236), resolution=(1260, 2800)))
     sleep(1)
     shell('am broadcast -a INPUT_TEXT --es text "信能通达"')
-    assert_exists(Template(r"tpl1703216716072.png", record_pos=(-0.098, -0.487), resolution=(1260, 2800)), "搜索成功")
+    assert_exists(Template(r"tpl1707040516068.png", record_pos=(-0.343, 0.076), resolution=(1080, 1920)), "搜索成功")
     sleep(1)
     touch(Template(r"tpl1705631010943.png", record_pos=(-0.341, 0.119), resolution=(1080, 1920)))
 
@@ -196,7 +196,13 @@ def dispatch():
     sleep(1)
     swipe(Template(r"tpl1705383524694.png", record_pos=(-0.369, 0.681), resolution=(1080, 1920)), vector=[0.0034, -0.6144])
     sleep(1)
-    touch(Template(r"tpl1705629922408.png", record_pos=(-0.123, 0.155), resolution=(1080, 1920)))
+    touch(Template(r"tpl1707123553152.png", record_pos=(-0.068, 0.193), resolution=(1080, 1920)))
+    sleep(1)
+    swipe(Template(r"tpl1707123585545.png", record_pos=(0.008, 0.682), resolution=(1080, 1920)), vector=[-0.0181, -0.0873])
+    sleep(1)
+    touch(Template(r"tpl1707123636103.png", record_pos=(0.41, 0.224), resolution=(1080, 1920)))
+    sleep(1)
+    touch(Template(r"tpl1707123656314.png", record_pos=(-0.16, 0.319), resolution=(1080, 1920)))
     sleep(1)
     touch(Template(r"tpl1704768570842.png", record_pos=(0.415, 0.45), resolution=(1260, 2800)))
     sleep(3)
@@ -440,7 +446,8 @@ def draft_to_submit():
     sleep(1)
     touch(Template(r"tpl1703298310846.png", record_pos=(0.117, 0.311), resolution=(1260, 2800)))
     sleep(2)
-    touch(Template(r"tpl1705632804963.png", record_pos=(0.002, -0.219), resolution=(1080, 1920)))
+    touch(wait(Template(r"tpl1707126930606.png", record_pos=(-0.176, -0.641), resolution=(1080, 1920))))
+
     sleep(2)
     swipe(Template(r"tpl1705633018013.png", record_pos=(-0.308, 0.785), resolution=(1080, 1920)), vector=[-0.0923, -0.8132])
     sleep(1)
@@ -497,7 +504,8 @@ def to_do_list():
     sleep(1)
     touch(wait(Template(r"tpl1705543648230.png", record_pos=(0.108, 0.214), resolution=(1080, 1920))))
     sleep(3)
-    touch(wait(Template(r"tpl1705543961609.png", record_pos=(0.003, -0.22), resolution=(1080, 1920))))
+    touch(wait(Template(r"tpl1707127135637.png", record_pos=(-0.005, -0.442), resolution=(1080, 1920))))
+
     ## 滑动到底部
     sleep(2)
     swipe(Template(r"tpl1705544009103.png", record_pos=(-0.354, 0.628), resolution=(1080, 1920)), vector=[0.0349, -0.5367])
@@ -530,7 +538,7 @@ def oa_monitor():
     shell('am broadcast -a INPUT_TEXT --es text "自动化"')
     sleep(1)
     # keyevent("ENTER")  
-    assert_exists(Template(r"tpl1705642866417.png", record_pos=(-0.004, -0.334), resolution=(1080, 1920)), "流程监控搜索成功")
+    assert_exists(Template(r"tpl1707041564993.png", record_pos=(-0.014, -0.461), resolution=(1080, 1920)), "流程监控搜索成功")
     touch(Template(r"tpl1703302577526.png", record_pos=(-0.437, -0.948), resolution=(1260, 2800)))
 
 # 消息通知
@@ -599,7 +607,7 @@ def completed_list(name='自动化'):
     sleep(1)
     touch(Template(r"tpl1705743269207.png", record_pos=(0.335, 0.213), resolution=(1080, 1920)))
     search_process_name(name)
-    assert_exists(Template(r"tpl1705847524441.png", record_pos=(-0.001, -0.415), resolution=(1080, 1920)), "已办列表搜索成功")
+    assert_exists(Template(r"tpl1707128387950.png", record_pos=(-0.012, -0.506), resolution=(1080, 1920)), "已办列表搜索成功")
     touch(Template(r"tpl1705744247670.png", record_pos=(-0.438, -0.765), resolution=(1080, 1920)))
     sleep(1)
     
@@ -610,7 +618,7 @@ def my_process(name='自动化'):
     touch(Template(r"tpl1705744732494.png", record_pos=(-0.337, 0.429), resolution=(1080, 1920)))
     sleep(1)
     search_process_name(name)
-    assert_exists(Template(r"tpl1705847131285.png", record_pos=(-0.011, -0.397), resolution=(1080, 1920)), "我的流程搜索成功")
+    assert_exists(Template(r"tpl1707128462028.png", record_pos=(-0.003, -0.506), resolution=(1080, 1920)), "我的流程搜索成功")
     touch(Template(r"tpl1705744247670.png", record_pos=(-0.438, -0.765), resolution=(1080, 1920)))
     sleep(1)
 
@@ -621,7 +629,7 @@ def chat_need_to_be_deal():
     assert_exists(Template(r"tpl1706842854730.png", record_pos=(-0.319, -0.104), resolution=(1080, 1920)),"验证流程结束后，4条待办消息推送正确")
     touch(wait(Template(r"tpl1706842324043.png", record_pos=(-0.139, -0.066), resolution=(1080, 1920))))
     sleep(1)
-    touch(wait(Template(r"tpl1706843104218.png", record_pos=(-0.233, 0.709), resolution=(1080, 1920))))
+    touch(wait(Template(r"tpl1707041158468.png", record_pos=(-0.23, 0.693), resolution=(1080, 1920))))
     ### 进入已完成得待办详情
     sleep(2)
     ### 验证审核状态
@@ -658,18 +666,7 @@ def chat_need_to_be_deal():
     touch(Template(r"tpl1706844366127.png", record_pos=(-0.441, -0.762), resolution=(1080, 1920)))
     sleep(1)
     touch(Template(r"tpl1706844382268.png", record_pos=(-0.432, -0.765), resolution=(1080, 1920)))
-    
-
-
-
-    
-
-
-
-
-    
-
-
+    touch(Template(r"tpl1707127484241.png", record_pos=(-0.205, 0.855), resolution=(1080, 1920)))
 
     
     
@@ -702,11 +699,16 @@ if __name__ == '__main__':
         to_do_list()
     ## 待办消息推送及详情
     chat_need_to_be_deal()
-    ## OA流程监控
-    oa_monitor()
+    
+    # OA流程监控
+    try:
+        oa_monitor()
+    except:
+        print("运行出错")
+    finally:
+        back_to_home()
     # 已办列表----已办列表还不支持括号中的内容搜索所以报错
     ## 通过时间搜索当日已审批过的单据
-
     try:
         completed_list()
     except:
@@ -716,7 +718,13 @@ if __name__ == '__main__':
     
     # 我的流程
     ## 通过时间搜索当日已审完成的单据
-    my_process()
+    try:
+        my_process()
+    except:
+        print("运行出错")
+    finally:
+        back_to_home()
+    
 
 
     # 微博
@@ -746,12 +754,13 @@ if __name__ == '__main__':
 
     # 质量管理
     ## 质量计划这里执行后有误，以后新建后，需要删除
-    check_nature()
-
-
-
-
-
+    try:
+        check_nature()
+    except:
+        print("运行出错")
+    finally:
+        back_to_home()
+    
 
 
 

@@ -61,6 +61,9 @@ def choose_start_time():
         touch(Template(r"tpl1705287723572.png", record_pos=(-0.358, 0.089), resolution=(1080, 1920)))
     elif up_time:
         touch(Template(r"tpl1705236723951.png", record_pos=(-0.428, 0.034), resolution=(1080, 1920)))
+    elif exists(Template(r"tpl1707044985205.png", record_pos=(-0.429, -0.024), resolution=(1080, 1920))):
+        touch(Template(r"tpl1707045005100.png", record_pos=(0.435, -0.137), resolution=(1080, 1920)))
+    
     else:
         raise Exception
     sleep(1)
@@ -183,5 +186,3 @@ maintenance(current_date)
 # 执行完成后，回到首页
 sleep(1)
 touch(Template(r"tpl1704692927039.png", record_pos=(-0.428, -0.95), resolution=(1260, 2800)))
-
-
