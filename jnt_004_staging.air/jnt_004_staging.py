@@ -43,7 +43,6 @@ def approval_opinion_pass(content='同意'):
     sleep(1)
     touch(Template(r"tpl1705547670789.png", record_pos=(-0.353, 0.081), resolution=(1080, 1920)))
     touch(Template(r"tpl1705633177839.png", record_pos=(0.318, 0.809), resolution=(1080, 1920)))
-    sleep(1)
     assert_exists(Template(r"tpl1705547751438.png", record_pos=(-0.007, 0.086), resolution=(1080, 1920)), "待办操作成功")
     sleep(1)
     
@@ -323,15 +322,11 @@ def return_material():
 # 提交OA数据到草稿箱
 def creat_oa_to_save(cur_date):
     touch(wait(Template(r"tpl1703214192081.png", record_pos=(-0.113, 0.0), resolution=(1260, 2800))))
-    touch(wait(Template(r"tpl1703214813002.png", record_pos=(-0.266, -0.646), resolution=(1260, 2800))))
-    sleep(1)
-    swipe(Template(r"tpl1705975488133.png", record_pos=(-0.255, 0.76), resolution=(1080, 1920)), vector=[-0.0696, -0.7381])
-
-    sleep(1)
-    touch(Template(r"tpl1705386767523.png", record_pos=(-0.233, 0.784), resolution=(1080, 1920)))
-    sleep(1)
-    assert_exists(Template(r"tpl1705493468889.png", record_pos=(-0.304, -0.507), resolution=(1080, 1920)), "进入测试专用流程3成功")
-
+    sleep(2)
+    touch(wait(Template(r"tpl1707273102001.png", record_pos=(-0.204, -0.629), resolution=(1080, 1920))))
+    text("cw")
+    assert_exists(Template(r"tpl1707273172745.png", record_pos=(-0.223, -0.341), resolution=(1080, 1920)), "搜索结果正确")
+    touch(Template(r"tpl1707273192629.png", record_pos=(-0.228, -0.339), resolution=(1080, 1920)))
 
     ## 流程详情编辑
 
@@ -407,7 +402,7 @@ def creat_oa_to_save(cur_date):
     touch(Template(r"tpl1703227054655.png", record_pos=(0.009, -0.141), resolution=(1260, 2800)))
     sleep(1)
     touch(Template(r"tpl1703227071364.png", record_pos=(-0.111, -0.536), resolution=(1260, 2800)))
-    sleep(3)
+    sleep(2)
     #### 科目选择
     touch(Template(r"tpl1705630647420.png", record_pos=(-0.027, 0.052), resolution=(1080, 1920)))
     sleep(1)
@@ -503,29 +498,29 @@ def job_weibo():
 def to_do_list():
     sleep(1)
     touch(wait(Template(r"tpl1705543648230.png", record_pos=(0.108, 0.214), resolution=(1080, 1920))))
-    sleep(3)
-    touch(wait(Template(r"tpl1707127135637.png", record_pos=(-0.005, -0.442), resolution=(1080, 1920))))
+    for i in range(4):
+        sleep(3)
+        touch(wait(Template(r"tpl1707127135637.png", record_pos=(-0.005, -0.442), resolution=(1080, 1920))))
 
-    ## 滑动到底部
-    sleep(2)
-    swipe(Template(r"tpl1705544009103.png", record_pos=(-0.354, 0.628), resolution=(1080, 1920)), vector=[0.0349, -0.5367])
-    sleep(1)
-    swipe(Template(r"tpl1705544036420.png", record_pos=(-0.383, 0.494), resolution=(1080, 1920)), vector=[-0.0333, -0.6147])
-    sleep(1)
-    swipe(Template(r"tpl1706837931059.png", record_pos=(-0.361, 0.363), resolution=(1080, 1920)), vector=[-0.0133, -0.5629])
-    sleep(1)
-    swipe(Template(r"tpl1706837953531.png", record_pos=(-0.345, 0.528), resolution=(1080, 1920)), vector=[-0.0249, -0.6415])
-    sleep(1)
+        ## 滑动到底部
+        sleep(2)
+        swipe(Template(r"tpl1705544009103.png", record_pos=(-0.354, 0.628), resolution=(1080, 1920)), vector=[0.0349, -0.5367])
+        sleep(1)
+        swipe(Template(r"tpl1705544036420.png", record_pos=(-0.383, 0.494), resolution=(1080, 1920)), vector=[-0.0333, -0.6147])
+        sleep(1)
+        swipe(Template(r"tpl1706837931059.png", record_pos=(-0.361, 0.363), resolution=(1080, 1920)), vector=[-0.0133, -0.5629])
+        sleep(1)
+        swipe(Template(r"tpl1706837953531.png", record_pos=(-0.345, 0.528), resolution=(1080, 1920)), vector=[-0.0249, -0.6415])
+        sleep(1)
 
-    ## 抄送给陈文哲
-    sleep(1)
-    touch(Template(r"tpl1705544246524.png", record_pos=(-0.079, 0.339), resolution=(1080, 1920)))
-    search_personal()
-    ## 审批意见
-    approval_opinion_pass()
+        ## 抄送给陈文哲
+        sleep(1)
+        touch(Template(r"tpl1705544246524.png", record_pos=(-0.079, 0.339), resolution=(1080, 1920)))
+        search_personal()
+        ## 审批意见
+        approval_opinion_pass()
     touch(Template(r"tpl1705547843315.png", record_pos=(-0.438, -0.762), resolution=(1080, 1920)))
     sleep(1)
-
 
     
 # 流程监控
@@ -693,13 +688,20 @@ if __name__ == '__main__':
     creat_oa_to_save(current_date)
     # 从草稿箱提交OA流程
     draft_to_submit()
-    ## 待办列表--0118
-    for i in range(4):
-        sleep(1)
+    ## 待办列表
+    try:
         to_do_list()
+    except:
+        print("运行出错")
+    finally:
+        back_to_home()
     ## 待办消息推送及详情
-    chat_need_to_be_deal()
-    
+    try:
+        chat_need_to_be_deal()
+    except:
+        print("运行出错")
+    finally:
+        back_to_home()
     # OA流程监控
     try:
         oa_monitor()
