@@ -1,2 +1,2 @@
-{"tag": "function", "depth": 1, "time": 1707270394.0547535, "data": {"name": "connect_device", "call_args": {"uri": "Android:///127.0.0.1:16448"}, "start_time": 1707270393.801565, "ret": "<Android '127.0.0.1:16448'>", "end_time": 1707270394.0547535}}
-{"tag": "function", "depth": 1, "time": 1707270432.6781068, "data": {"name": "sleep", "call_args": {"secs": 10}, "start_time": 1707270422.6777008, "ret": null, "end_time": 1707270432.6781068}}
+{"tag": "function", "depth": 1, "time": 1708218586.5063055, "data": {"name": "connect_device", "call_args": {"uri": "Android:///127.0.0.1:16448"}, "start_time": 1708218586.3749065, "ret": "<Android '127.0.0.1:16448'>", "end_time": 1708218586.5063055}}
+{"tag": "function", "depth": 1, "time": 1708218606.9647229, "data": {"name": "sleep", "call_args": {"secs": 10}, "start_time": 1708218596.9637737, "ret": null, "end_time": 1708218606.9647229}}

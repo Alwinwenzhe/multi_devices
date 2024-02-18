@@ -402,10 +402,10 @@ def creat_oa_to_save(cur_date):
     touch(Template(r"tpl1703227054655.png", record_pos=(0.009, -0.141), resolution=(1260, 2800)))
     sleep(1)
     touch(Template(r"tpl1703227071364.png", record_pos=(-0.111, -0.536), resolution=(1260, 2800)))
-    sleep(2)
+    sleep(3)
     #### 科目选择
     touch(Template(r"tpl1705630647420.png", record_pos=(-0.027, 0.052), resolution=(1080, 1920)))
-    sleep(1)
+    sleep(2)
     touch(Template(r"tpl1705632236263.png", record_pos=(-0.369, 0.023), resolution=(1080, 1920)))
     shell('am broadcast -a INPUT_TEXT --es text "办公费"')
     touch(Template(r"tpl1705632418417.png", record_pos=(-0.365, 0.121), resolution=(1080, 1920)))
@@ -669,17 +669,17 @@ if __name__ == '__main__':
     current_date = time.strftime("%Y-%m-%d")
     current_time = time.strftime("%Y-%m-%d %H:%M:%S")
     touch(Template(r"tpl1704189135917.png", record_pos=(-0.211, 1.079), resolution=(1260, 2800)))
-    #仓储管理
-    ## 入库
-    Warehousing()
-    ## 调度
-    dispatch()
-    ## 出库------------------这里有返回bug，后续还需优化
-    outbound()
-    ## 领用-固定资产----------这里缺少对领用成功弹窗的验证
-    use()
-    ## 归还
-    return_material()
+#     #仓储管理
+#     ## 入库
+#     Warehousing()
+#     ## 调度
+#     dispatch()
+#     ## 出库------------------这里有返回bug，后续还需优化
+#     outbound()
+#     ## 领用-固定资产----------这里缺少对领用成功弹窗的验证
+#     use()
+#     ## 归还
+#     return_material()
 
 
     #  测试前置：需要先切换输入法

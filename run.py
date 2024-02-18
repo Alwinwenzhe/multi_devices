@@ -193,7 +193,10 @@ if __name__ == '__main__':
     gu = GuiFunction()
     gu.double_click_pic()
     time.sleep(20)
+    subprocess.getoutput("adb kill-server")
+    time.sleep(1)
     subprocess.getoutput("adb connect 127.0.0.1:16448")
+
     time.sleep(1)
     gu.left_click_pic()
     devices = [tmp[0] for tmp in ADB().devices()]
