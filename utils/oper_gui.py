@@ -1,7 +1,8 @@
 import pyautogui,time
 
 pyautogui.PAUSE = 1
-pyautogui.FAILSAFE = True
+pyautogui.FAILSAFE = False
+
 
 class GuiFunction(object):
 
