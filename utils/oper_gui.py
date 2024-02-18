@@ -4,9 +4,11 @@ pyautogui.PAUSE = 1
 pyautogui.FAILSAFE = False
 
 
+
 class GuiFunction(object):
 
     def double_click_pic(self,pic_name=r'pic/mumu_start.png'):
+        time.sleep(1)
         pyautogui.hotkey('win', 'd')
         coords = pyautogui.locateOnScreen(pic_name,confidence=0.9)
         if coords is not None:
