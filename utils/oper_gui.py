@@ -1,8 +1,6 @@
 import pyautogui,time
-
 pyautogui.PAUSE = 1
 pyautogui.FAILSAFE = False
-
 
 
 class GuiFunction(object):
@@ -26,7 +24,7 @@ class GuiFunction(object):
             pyautogui.leftClick(x, y)
         else:
             print('没找到:'+ pic_name)
-        time.sleep(6)
+        time.sleep(12)
 
     def cmd_connect_mumu(self,pic_name=r'pic/cmd_enter.png'):
         pyautogui.hotkey('win', 'r')

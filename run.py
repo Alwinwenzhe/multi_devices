@@ -1,6 +1,9 @@
 # -*- encoding=utf-8 -*-
 # Run Airtest in parallel on multi-device
 import os,sys
+
+from airtest.core.api import connect_device, auto_setup
+
 curPath = os.path.abspath(os.path.dirname(__file__))
 sys.path.append(curPath)
 import traceback
@@ -181,32 +184,26 @@ def get_log_dir(device, air):
         os.makedirs(log_dir)
     return log_dir
 
+def init_dev():
+    '''
+    有了它，每次运行前，就会自动连接虚拟机，不用先链接设备再测试了
+    '''
+    dev = connect_device("android://127.0.0.1:5037/127.0.0.1:16384?cap_method=ADBCAP&touch_method=MAXTOUCH&")
+    auto_setup(__file__)
+
 
 if __name__ == '__main__':
     """
         初始化数据
         Init variables here
     """
-
-    # print(curPath)
-    # change_input("start")
     gu = GuiFunction()
     gu.double_click_pic()
-    time.sleep(20)
-    subprocess.getoutput("adb kill-server")
-    time.sleep(1)
+    time.sleep(15)
     subprocess.getoutput("adb connect 127.0.0.1:16448")
-
-    time.sleep(1)
-    gu.left_click_pic()
+    # init_dev()
     devices = [tmp[0] for tmp in ADB().devices()]
     airs = get_airtest()
-    print(airs)
-
-    # Continue tests saved in data.json
-    # Skip scripts that run succeed
-    # 基于data.json的进度，跳过已运行成功的脚本
-    # run(devices, air)
 
     # Resun all script
     for air in airs:

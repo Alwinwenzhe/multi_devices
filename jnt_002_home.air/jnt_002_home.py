@@ -23,7 +23,6 @@ def choose_test_pro():
         sleep(1)
         assert_exists(Template(r"tpl1703213564563.png", record_pos=(-0.133, -0.956), resolution=(1260, 2800)), "项目切换成功")
 
-        
 # 切换到考勤打卡项目
 def choose_clock_pro():
     touch(Template(r"tpl1703296910243.png", record_pos=(-0.402, 1.079), resolution=(1260, 2800)))
@@ -35,9 +34,7 @@ def choose_clock_pro():
         sleep(1)
         touch(Template(r"tpl1704164974029.png", record_pos=(-0.287, 0.543), resolution=(1260, 2800)))
         sleep(1)
-
         assert_exists(Template(r"tpl1704164927088.png", record_pos=(-0.128, -0.948), resolution=(1260, 2800)), "项目切换成功")
-        
 
 # 考勤打卡
 def clock_in():
@@ -73,7 +70,6 @@ def enter_equip():
     wait(Template(r"tpl1705040842019.png", record_pos=(-0.019, -0.014), resolution=(1080, 1920)))
     assert_exists(Template(r"tpl1705042863674.png", record_pos=(0.006, 0.004), resolution=(1080, 1920)), "设备信息回显正确")
     touch(Template(r"tpl1705042888482.png", record_pos=(-0.436, -0.764), resolution=(1080, 1920)))
-    
 
 # 视频
 def vedio_manager():
@@ -83,8 +79,6 @@ def vedio_manager():
     assert_exists(Template(r"tpl1705556235208.png", record_pos=(-0.154, -0.294), resolution=(1080, 1920)), "视频管理没有明显报错")
     touch(Template(r"tpl1705049220642.png", record_pos=(-0.434, -0.763), resolution=(1080, 1920)))
 
-
-            
 if __name__ == '__main__':
     # 用例开始：
     # 01--考勤打卡---模拟器中不能打卡

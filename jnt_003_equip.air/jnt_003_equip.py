@@ -175,14 +175,15 @@ def maintenance(cur_date):
     sleep(1)
     touch(Template(r"tpl1704188006673.png", record_pos=(-0.435, -0.953), resolution=(1260, 2800)))
     sleep(1)
-    
-# 开始执行用例
-touch(Template(r"tpl1704167318084.png", record_pos=(-0.403, 1.077), resolution=(1260, 2800)))
-touch(Template(r"tpl1704167324614.png", record_pos=(0.178, -0.282), resolution=(1260, 2800)))
-sleep(5)
-current_date = time.strftime("%Y-%m-%d") 
-repair(current_date)
-maintenance(current_date)
-# 执行完成后，回到首页
-sleep(1)
-touch(Template(r"tpl1704692927039.png", record_pos=(-0.428, -0.95), resolution=(1260, 2800)))
+
+if __name__ == '__main__':
+    # 开始执行用例
+    touch(Template(r"tpl1704167318084.png", record_pos=(-0.403, 1.077), resolution=(1260, 2800)))
+    touch(Template(r"tpl1704167324614.png", record_pos=(0.178, -0.282), resolution=(1260, 2800)))
+    sleep(5)
+    current_date = time.strftime("%Y-%m-%d")
+    repair(current_date)
+    maintenance(current_date)
+    # 执行完成后，回到首页
+    sleep(1)
+    touch(Template(r"tpl1704692927039.png", record_pos=(-0.428, -0.95), resolution=(1260, 2800)))
